@@ -216,7 +216,7 @@ function! s:PreviewCSSColorInLine(where)
   return 0
 endfunction
 
-function s:ColorHighlight()
+function! s:CssHighlight()
     if has("gui_running") || &t_Co==256
       " HACK modify cssDefinition to add @cssColors to its contains
       redir => s:olddef
@@ -394,8 +394,8 @@ function s:ColorHighlight()
       if !exists('g:cssColorVimDoNotMessMyUpdatetime')
         set ut=100
       endif
-
     endif
+
 endfunction
 
-command ColorHighlight call s:ColorHighlight()
+command! ColorHighlight call s:CssHighlight()
